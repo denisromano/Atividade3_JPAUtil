@@ -39,10 +39,11 @@ public class Main {
 			}
 			System.out.println("Pedidos Inseridos");
 			// busca cliente cliente
+			System.out.println("Busca Clientes e Pedidos");
 			List<Clientes> exibeClientes = new ArrayList<Clientes>();
 			
 			exibeClientes = clientesDao.listar();
-
+			
 	        for (Clientes listarcliente: exibeClientes) {
 	        	System.out.println("Nome: " + listarcliente.getNome() + " - EMail: " + listarcliente.getEmail() );
 	        }			
@@ -79,19 +80,6 @@ public class Main {
 			System.out.println("Remover pedido 3");
 			pedidosDao.remover(removPed);
 
-			/*Clientes clienteTeste = null;
-			clienteTeste = dao.buscarCliente(cliente.getId());
-			
-			// listando os pedidos do cliente			
-			System.out.println("Lista Pedidos do " + clienteTeste.getNome() + 
-												" ID: "+ clienteTeste.getId());
-			List<Pedidos> pedidosCliente = dao.listarPedidosCliente(clienteTeste.getId());
-			for (Pedidos pedidos : pedidosCliente) {
-				System.out.println(pedidos.getId() + 
-									" " + pedidos.getDescricao() + 
-									" R$ " + pedidos.getValor());
-			}
-		    */
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
